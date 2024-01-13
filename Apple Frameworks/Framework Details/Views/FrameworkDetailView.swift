@@ -14,19 +14,7 @@ struct FrameworkDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-                Button {
-                    isDetailScreenDisplaying = false
-                } label: {
-                    Image(systemName: "xmark")
-                        .renderingMode(.template)
-                        .tint(Color(.label))
-                        .imageScale(.large)
-                }
-                .padding()
-            }
+            XDismissButton(isDetailScreenDisplaying: $isDetailScreenDisplaying)
             
             Spacer()
             

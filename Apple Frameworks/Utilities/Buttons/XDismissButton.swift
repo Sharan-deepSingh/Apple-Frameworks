@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct XDismissButton: View {
+    
+    @Binding var isDetailScreenDisplaying: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            
+            Button {
+                isDetailScreenDisplaying = false
+            } label: {
+                Image(systemName: "xmark")
+                    .renderingMode(.template)
+                    .tint(Color(.label))
+                    .imageScale(.large)
+            }
+            .padding()
+        }
     }
 }
 
 #Preview {
-    XDismissButton()
+    XDismissButton(isDetailScreenDisplaying: .constant(false))
 }
